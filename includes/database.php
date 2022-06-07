@@ -1,3 +1,4 @@
+
 <?php
 
 $db = mysqli_connect('localhost','root','root','appsalon');
@@ -8,5 +9,4 @@ exit;
 }
 
 // echo 'conexion correcta';
-
 
