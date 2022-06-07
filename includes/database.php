@@ -8,5 +8,6 @@ if(!$db){
 exit;
 }
 
+
 // echo 'conexion correcta';
 
