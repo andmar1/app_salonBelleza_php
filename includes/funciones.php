@@ -14,14 +14,27 @@ function obtenerServicos(){
         // mysqli_query(  base de datos, consulta a ejecutar)
         $consulta = mysqli_query($db, $sql);
 
-        // obtener los resultados 
+        // crear un arreglo para vaciar los resultados 
+        $servicios = [];
+        $i = 0;
 
-        echo "<pre>";
-            var_dump( mysqli_fetch_assoc( $consulta ));
-        echo "</pre>";
+        // obtener los resultados iterando los elementos
+        while( $row = mysqli_fetch_assoc($consulta) ){
+            $servicios[$i]['id'] = $row['id'];
+            $servicios[$i]['nombre'] = $row['nombre'];
+            $servicios[$i]['precio'] = $row['precio'];
+
+
+            $i++;
+
+        }
         
+        echo '<pre>';
+            var_dump( $servicios );
+        echo '</pre>';
 
 
+        
     } catch (\Throwable $th) {
         
         var_dump($th);
