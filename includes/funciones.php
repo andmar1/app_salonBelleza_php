@@ -1,6 +1,6 @@
 <?php
 
-function obtenerServicos(){
+function obtenerServicos():array{
     try {
         // importar conexion 
         require 'database.php';
@@ -23,15 +23,14 @@ function obtenerServicos(){
             $servicios[$i]['id'] = $row['id'];
             $servicios[$i]['nombre'] = $row['nombre'];
             $servicios[$i]['precio'] = $row['precio'];
-
-
             $i++;
 
         }
         
-        echo '<pre>';
-            var_dump( $servicios );
-        echo '</pre>';
+        // echo '<pre>';
+        //     var_dump( $servicios );
+        // echo '</pre>';
+        return $servicios;
 
 
         
